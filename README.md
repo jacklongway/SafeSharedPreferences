@@ -68,3 +68,17 @@ SharedPreferences是单进程线程安全,Android系统进程之间的内存是�
         Log.e(TAG, "map result <<" + mSharePreferencesManager.getAll().toString());
 	```
 > 注意上面的步骤在任意进程都一样,并且数据都是安全共享的 
+
+## 问题
+使用过程中有任何问题反馈至[feedback](https://github.com/jackwaylong/SafeSharedPreferences/issues)
+
+## 支持
+> 任何疑问?
+
+1. 源码学习[safeSharedPreferences](https://github.com/jackwaylong/SafeSharedPreferences/tree/master/safeshareperferences/src/main/java/com/longway/safeshareperferences)
+
+## 贡献
+> clone项目发送pull request
+
+## License
+SafeSharedPreferences is under the Apache license. See the [LICENSE](https://github.com/jackwaylong/SafeSharedPreferences/blob/master/LICENSE) file for details.

@@ -18,12 +18,6 @@
             </intent-filter>
         </activity>
 
-        <provider
-                android:authorities="com.longway.sharepreferencesmultiprocessaccess.SharePreferencesProvider"
-                android:name="com.longway.safeshareperferences.SharePreferencesProvider"
-                android:enabled="true"
-                android:exported="true">
-        </provider>
 
         <service
                 android:name=".TestService"

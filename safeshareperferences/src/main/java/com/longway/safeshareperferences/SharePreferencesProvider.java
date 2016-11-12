@@ -21,11 +21,11 @@ import java.util.Set;
 
 public class SharePreferencesProvider extends ContentProvider {
     private static final String TAG = SharePreferencesProvider.class.getSimpleName();
+    private static final String AUTHORITY = "com.longway.safeshareperferences.SharePreferencesProvider";
     private static final String CONTENT = "content://";
     private static final int SP = 0x1;
     private UriMatcher mUriMatcher;
     private SharePreferences mSharePreferences;
-    private String mAuthority;
 
     /**
      * init
@@ -33,10 +33,8 @@ public class SharePreferencesProvider extends ContentProvider {
     @Override
     public boolean onCreate() {
         Context context = getContext();
-        mAuthority = context.getPackageName() + "." + TAG;
-        Log.e(TAG, mAuthority);
         mUriMatcher = new UriMatcher(UriMatcher.NO_MATCH);
-        mUriMatcher.addURI(mAuthority, "/sp/*", SP);
+        mUriMatcher.addURI(AUTHORITY, "/sp/*", SP);
         mSharePreferences = SharePreferences.getInstance(context, SharePreferences.DEFAULT_SP_NAME);
         return true;
     }
@@ -48,7 +46,7 @@ public class SharePreferencesProvider extends ContentProvider {
         if (context == null) {
             return null;
         }
-        return Uri.parse(CONTENT + context.getPackageName() + "." + TAG + "/sp/1");
+        return Uri.parse(CONTENT + AUTHORITY + "/sp/1");
 
     }
 
@@ -59,7 +57,7 @@ public class SharePreferencesProvider extends ContentProvider {
         if (context == null) {
             return null;
         }
-        return Uri.parse(CONTENT + context.getPackageName() + "." + TAG + "/sp/");
+        return Uri.parse(CONTENT + AUTHORITY + "/sp/");
 
     }
 

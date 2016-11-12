@@ -34,7 +34,7 @@ SharedPreferences是单进程线程安全,Android系统进程之间的内存是�
 2. 注册进程之间数据观察者(非必须)
 
 	```
-	private SharePreferencesObserver mSharePreferencesObserver = new 		SharePreferencesObserver() {
+	private SharePreferencesObserver mSharePreferencesObserver = new SharePreferencesObserver() {
         	@Override
         	public void onSharePreferencesChange(SharePreferencesObservable 			sharePreferencesObservable, String key) {
             //Log.e(TAG, "key:" + key + ",value:" + mSharePreferencesManager.getBoolean(key, 		false));

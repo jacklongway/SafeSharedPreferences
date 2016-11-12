@@ -21,17 +21,7 @@ SharedPreferences是单进程线程安全,Android系统进程之间的内存是�
 ![sp](art/SharedPreferences.png)
 
 ## Usage
-1. 注册provider
-
-	```
-  	<provider
-                 android:authorities="{packageName}.SharePreferencesProvider"
-                 android:name="com.longway.safeshareperferences.SharePreferencesProvider"
-                 android:enabled="true"
-                 android:exported="true">
-   	</provider>
-	```
-2. 注册进程之间数据观察者(非必须)
+1. 注册进程之间数据观察者(非必须)
 
 	```
 	private SharePreferencesObserver mSharePreferencesObserver = new SharePreferencesObserver() {
@@ -45,7 +35,7 @@ SharedPreferences是单进程线程安全,Android系统进程之间的内存是�
 	mSharePreferencesManager.registerOnSharePreferencesObserver(mSharePreferencesObserver);
 
 	```
-3.数据访问
+2. 数据访问
 
 	```
         Log.e(TAG, mSharePreferencesManager.putBoolean("isExpire", true) + "");

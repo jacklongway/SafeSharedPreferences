@@ -136,7 +136,11 @@ public class SharePreferencesProvider extends ContentProvider {
                             }
                         }
                     } else {
-                        results = new Object[]{mSharePreferences.getString(selection, defaultValue)};
+                        if (mSharePreferences.contains(selection)) {
+                            results = new Object[]{"true"};
+                        } else {
+                            results = new Object[]{"false"};
+                        }
                     }
                 }
                 break;

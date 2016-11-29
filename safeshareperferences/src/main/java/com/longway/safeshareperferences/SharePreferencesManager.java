@@ -106,9 +106,6 @@ public class SharePreferencesManager extends SharePreferencesObservable {
 
     /**
      * get value by type
-     * @param cursor
-     * @param ci
-     * @return
      */
     private Object getValue(Cursor cursor, int ci) {
         int type = cursor.getType(ci);
@@ -135,7 +132,6 @@ public class SharePreferencesManager extends SharePreferencesObservable {
 
     /**
      * delegate getAll
-     * @return
      */
     private Map<String, ?> getMap() {
         Cursor cursor = null;
@@ -195,8 +191,8 @@ public class SharePreferencesManager extends SharePreferencesObservable {
 
     @Override
     public boolean contains(String key) {
-        String value = getValue(key, "");
-        return !TextUtils.isEmpty(value);
+        String value = getValue(key, null);
+        return TextUtils.equals("true", value);
     }
 
     /**
